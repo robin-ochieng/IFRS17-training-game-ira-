@@ -1,0 +1,10 @@
+I need ideas of how we can modularize this code to separate concerns and for easy reusability, scalability and managability, I think the codebase is becoming so large...so just give me ideas for code modularization before we start the work
+
+
+
+
+
+
+
+
+On the above module 10 could you use the below questions, options, answers and explanations and update the below questions to the above so we can have 10 questions to the above module - include the answer and explanation
