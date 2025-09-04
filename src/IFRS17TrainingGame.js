@@ -1333,15 +1333,17 @@ const IFRS17TrainingGame = ({ currentUser: propsUser, onLogout, onShowAuth }) =>
         </div>
 
         {/* Title */}
-        <div className="mb-6 relative">
-          <img 
-            src="/IRA logo.png" 
-            alt="IRA Logo" 
-            className="hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2 h-6 md:h-10 lg:h-12 w-auto z-10"
-          />
-          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-white text-center py-2">
-            IFRS 17 Quest and Concur: Regulatory Training Game
-          </h1>
+        <div className="mb-6">
+          <div className="flex flex-col items-center text-center">
+            <img
+              src="/IRA logo.png"
+              alt="Insurance Regulatory Authority"
+              className="mb-4 h-12 md:h-16 lg:h-20 w-auto block"
+            />
+            <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-white">
+              IFRS 17 Quest and Concur: Regulatory Training Game
+            </h1>
+          </div>
         </div>
 
         {/* Stats Dashboard */}

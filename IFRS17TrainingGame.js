@@ -27,6 +27,26 @@ import {
 
 // Add onLogout as a prop and remove the problematic import
 const IFRS17TrainingGame = ({ onLogout, onShowAuth }) => {
+  // Use public asset path for IRA logo so it works across builds without importing a binary into src
+  const iraLogo = process.env.PUBLIC_URL + '/IRA logo.png';
+
+  // Centered header block: IRA logo above game title
+  const GameHeaderTitle = () => (
+    <section className="w-full">
+      <div className="mx-auto max-w-6xl grid place-items-center text-center py-4">
+        <img
+          src={iraLogo}
+          alt="Insurance Regulatory Authority"
+          className="mb-4 h-16 md:h-20 w-auto block"
+          loading="eager"
+          decoding="async"
+        />
+        <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
+          IFRS 17 Quest and Concur: Regulatory Training Game
+        </h1>
+      </div>
+    </section>
+  );
   const [currentUser, setCurrentUser] = useState(null);
   const [isGuest, setIsGuest] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
@@ -885,15 +905,8 @@ const IFRS17TrainingGame = ({ onLogout, onShowAuth }) => {
             )}
           </div>
         </div>
-        <div className="mb-6 relative">
-          <img 
-            src="/kenbright-logo.png" 
-            alt="Kenbright Logo" 
-            className="hidden sm:block absolute left-0 top-1/2 transform -translate-y-1/2 h-10 md:h-16 lg:h-20 w-auto z-10"
-          />
-          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-white text-center py-2">
-            IFRS 17 Quest and Concur: Regulatory Training Game
-          </h1>
+        <div className="mb-6">
+          <GameHeaderTitle />
         </div>
         <div className="bg-black/30 backdrop-blur-md rounded-2xl p-6 mb-6 border border-white/10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
@@ -1571,32 +1584,7 @@ const IFRS17TrainingGame = ({ onLogout, onShowAuth }) => {
           </button>
         </div>
 
-        {/* Endorsed By Section */}
-        <div className="mt-6 mb-4">
-          <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-lg endorsed-section">
-            <div className="flex flex-col items-center justify-center space-y-4">
-              <span className="text-sm text-gray-300 font-medium">Endorsed by</span>
-              
-              {/* Logo Container */}
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-purple-400/20 to-blue-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500 logo-glow"></div>
-                <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 transform transition-all duration-300 hover:scale-105 logo-container border border-white/20">
-                  <div className="flex flex-col items-center space-y-2">
-                    <img 
-                      src="/IRA logo.png" 
-                      alt="IRA Logo" 
-                      className="h-10 w-20 object-contain logo-image filter drop-shadow-2xl brightness-110 contrast-125"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'flex';
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        
 
         {/* Professional Footer Section */}
         <footer className="mt-6 mb-4">
